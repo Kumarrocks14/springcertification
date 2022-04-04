@@ -25,14 +25,12 @@ public class BlogService {
                 Arrays.asList("blog7","blog8","blog9"));
         List<List<String>> blogsList = blogStream.collect(Collectors.toList());
         Stream<List<String>> streams = blogsList.stream();
-        Stream<String> stringStream = blogsList.stream().flatMap(bList -> bList.stream());
-        List<String> blogs = blogsList.stream().flatMap(bList -> bList.stream()).collect(Collectors.toList());
-        return blogs;
+        Stream<String> stringStream = blogsList.stream().flatMap(List::stream);
+        return blogsList.stream().flatMap(List::stream).collect(Collectors.toList());;
     }
 
     public List<String> getAuthors()
     {
-        List<String> authorList = List.of("Tim", "Jim", "Tom");
-        return authorList;
+        return List.of("Tim", "Jim", "Tom");
     }
 }
