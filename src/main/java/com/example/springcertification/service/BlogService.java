@@ -26,7 +26,7 @@ public class BlogService {
         List<List<String>> blogsList = blogStream.collect(Collectors.toList());
         Stream<List<String>> streams = blogsList.stream();
         Stream<String> stringStream = blogsList.stream().flatMap(List::stream);
-        return blogsList.stream().flatMap(List::stream).collect(Collectors.toList());;
+        return blogsList.stream().flatMap(List::stream).collect(Collectors.toList());
     }
 
     public List<String> getAuthors()
