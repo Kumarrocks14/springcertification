@@ -1,6 +1,8 @@
 
 
 package com.example.springcertification;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.CommandLineRunner;
@@ -10,10 +12,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class SpringcertificationApplication implements CommandLineRunner, ApplicationRunner
 {
+	private static final Logger logger = LoggerFactory.getLogger(SpringcertificationApplication.class);
+
 	public static void main(String[] args) {
 
 		SpringApplication.run(SpringcertificationApplication.class, args);
-		System.out.println("Spring Cert Project ");
+		logger.info("Spring Cert Project ");
 	}
 
 	@Override
